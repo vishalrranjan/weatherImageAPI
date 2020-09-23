@@ -96,12 +96,13 @@ Thumbs.db
 *.key
 *.pem
 *.env
+*.gitignore
 
 # -------------------------
 # BEGIN Whitelisted Files
 # -------------------------
 
 # track these files, if they exist
-.gitignore
+!.gitignore
 !.editorconfig
 !.phpcs.xml.dist
