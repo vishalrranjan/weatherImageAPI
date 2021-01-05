@@ -96,6 +96,14 @@ app.route("/imageapi/:weatherType")
         );
 });
 
-app.listen(3000, function(){
+
+// for listing by heroku on port
+
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
+
+app.listen(port, function(){
     console.log("App is listening on port 3000");
 });
