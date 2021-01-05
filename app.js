@@ -8,8 +8,8 @@ const app = express();
 
 app.set('view-engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.static(__dirname));
 
-// mongoose.connect("mongodb://localhost:27017/weatherImageDB", { useUnifiedTopology: true, useNewUrlParser: true });
 const uri = process.env.ATLAS_URI;
 mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true});
 mongoose.set("useCreateIndex", true);
@@ -25,6 +25,10 @@ const weatherConditionSchema = new mongoose.Schema({
 });
 
 const Condition = mongoose.model("Condition", weatherConditionSchema);
+
+app.get("/", (req, res)=>{
+    res.sendFile(__dirname + '/index.html')
+});
 
 app.route("/imageapi")
 .get(function(req, res){
@@ -46,7 +50,7 @@ app.route("/imageapi")
     });
     newWeather.save(function(err){
         if(!err){
-            res.send("successfully update the data.");
+            res.send("updated the data successfully.");
         } else{
             res.send(err);
         }

@@ -1,0 +1,43 @@
+*{
+    box-sizing: border-box;
+}
+    @import url('https://fonts.googleapis.com/css2?family=Manrope&display=swap');
+
+body{
+    margin: 0;
+    height: 100vh;
+    background-color: hsl(210, 46%, 95%);
+    font-family: 'Manrope', sans-serif;
+}
+
+.wrapper{
+    margin-left: 200px;
+    margin-right: 200px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.heading{
+    margin-top: 0;
+    font-weight: 400;
+    text-align: center;
+    padding: 2rem;
+    color: rebeccapurple;
+    border-bottom: 1px solid #9896a4;
+}
+.description{
+    font-size: x-large;
+    font-weight: lighter;
+    color: #000;
+}
+code{
+    /* background-color: rgb(19, 19, 19); */
+    background-color: rgb(99, 97, 97);
+    /* color: #34414e; */
+    color: #e7e7e7;
+    font-weight: lighter;
+    padding: 5px;
+}
+.demo-image{
+    width: 50%;
+    height: 400px;
+    object-fit: cover;
+}
